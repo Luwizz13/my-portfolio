@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Luis Secuya | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #013F4A;
+            color: #068562;
+            line-height: 1.6;
+            transition: 0.3s;
+            min-height: 100vh;
+        }
+
+    
+        nav {
+            background: #2D1B69;
+            padding: 12px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 4px 8px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #E46CFF;
+        }
+
+        
+        button, .button {
+            display: inline-block;
+            padding: 10px 18px;
+            border: none;
+            background: #2D1B69;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            background: #E46CFF;
+            transform: translateY(-2px);
+        }
+
+        nav button {
+            background: white;
+            color: #2D1B69;
+            margin-left: 10px;
+        }
+
+        nav button:hover {
+            background: #E46CFF;
+            color: white;
+        }
+
+        
+        main {
+            max-width: 850px;
+            margin: auto;
+            padding: 20px 15px;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(45, 27, 105, 0.05);
+            scroll-margin-top: 75px;
+            border: 1px solid #e9d8fd;
+        }
+
+        h1, h2, h3 {
+            color: #2D1B69;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #E46CFF;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        a {
+            color: #6b21a8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Home / Hero */
+        .hero {
+            background: transparent;
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .hero section {
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .profile {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0a000c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+       
+        #about p {
+            margin: 8px 0;
+        }
+
+        .project-item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9d8fd;
+        }
+
+        .project-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project-item img {
+            width: 220px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+       
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .skills li {
+            background: #f3e8ff;
+            color: #2D1B69;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid #d8b4fe;
+        }
+
+      
+        form {
+            margin-top: 15px;
+        }
+
+        input, textarea {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font: inherit;
+            background: #f8fafc;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2D1B69;
+            box-shadow: 0 0 0 2px #E46CFF;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            padding: 25px 20px;
+            text-align: center;
+            background: #2D1B69;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        body.dark {
+            background: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .dark nav, .dark footer {
+            background: #1e293b;
+        }
+
+        .dark section {
+            background: #1e293b;
+            border-color: #334155;
+            box-shadow: none;
+        }
+
+        .dark h1, .dark h2, .dark h3 {
+            color: #f1f5f9;
+        }
+
+        .dark h2 {
+            border-bottom-color: #E46CFF;
+        }
+
+        .dark a {
+            color: #c084fc;
+        }
+
+        .dark nav button {
+            background: #334155;
+            color: white;
+        }
+
+        .dark .skills li {
+            background: #334155;
+            color: #f1f5f9;
+            border-color: #475569;
+        }
+
+        .dark .project-item {
+            border-bottom-color: #334155;
+        }
+
+        .dark input, .dark textarea {
+            background: #0f172a;
+            color: white;
+            border-color: #334155;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 700px) {
+            nav a {
+                font-size: 13px;
+                margin: 2px;
+                padding: 5px 8px;
+            }
+
+            section {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-item img {
+                width: 100%;
+                height: 180px;
+            }
+        }
+
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+   
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+        <button onclick="changeTheme()" id="themeButton">
+            Dark Mode
+        </button>
+    </nav>
+
+   
+    <header class="hero" id="home">
+        <section>
+            <img class="profile" src="profile.jpg"
+                 alt="My Profile Picture">
+
+            <h1>Hi, I'm John Luis Secuya!</h1>
+
+            <p><i>Dream Big, Achieve More.</i></p>
+
+            <p>
+               Hello, I am a college student who wants to explore the world of technology.
+            </p>
+
+            <a class="button" href="#projects">View My Projects</a>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                I am a student who wants to improve my Technician
+                skills and learn new things.
+            </p>
+
+            <p><b>Course:</b> ACT</p>
+            <p><b>School:</b> Datamex College of Saint Adeline</p>
+            <p><b>Hobbies:</b> Playing online games, Playing Basketball </p>
+            <p><b>Interests:</b> </p>On how to Repair Units.
+        </section>
+
+        
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <ul class="skills">
+                <li>Adaptability and continuous learning</li>
+                <li>Resourceful</li>
+                <li>Time Management</li>
+                <li>Teamwork</li>
+            </ul>
+        </section>
+
+       
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-item">
+                <img src="project1.jpg" alt="Personal Portfolio">
+
+                <div>
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A website that introduces me and shows my skills.
+                    </p>
+
+                    <p><b>Technologies:</b> HTML and CSS</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="project2.jpg"
+                     alt="Cafe POS and inventory">
+
+                <div>
+                    <h3>Cafe POS and inventory</h3>
+
+                    <p>
+                        A system for taking customer orders and tracking cafe stock in real time.
+                    </p>
+
+                    <p><b>Technologies:</b> VB.NET and MS Access</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="project3.jpg"
+                     alt="Warehouse Management System">
+
+                <div>
+                    <h3>Restaurant Management System</h3>
+
+                    <p>
+                        A Python system to add, search, update, and delete restaurant menu items and customer orders.
+                    </p>
+
+                    <p><b>Technologies:</b> Python</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>My Achievements</h2>
+
+            <ul>
+                <li>Achieved with Honors in Senior High School.</li>
+                <li>Overall Mobile legends Champion in DCSA.</li>
+                
+            </ul>
+        </section>
+
+     
+        <section id="goals">
+            <h2>My Future Goals</h2>
+
+            <ul>
+                <li>Improve my Technician skills.</li>
+                <li>Improve my Technician adaptability.</li>
+                <li>Become a successful IT Technician.</li>
+            </ul>
+        </section>
+
+        
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <p>
+                Email:
+                <a href="secuyajohnluis3@gmail.com">
+                    secuyajohnluis3@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.facebook.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Facebook
+                </a>
+            </p>
+
+            <p>
+                <a href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </p>
+
+            <h3>Send a Message</h3>
+
+            <form onsubmit="sendMessage(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2026 John Luis Secuya. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Dark and Light Mode
+        function changeTheme() {
+            const isDark = document.body.classList.toggle("dark");
+
+            document.getElementById("themeButton").textContent =
+                isDark ? "Light Mode" : "Dark Mode";
+        }
+
+       
+        function sendMessage(event) {
+            event.preventDefault();
+
+            alert(
+                "Thank you for your message! " +
+                "This demo form does not send emails yet."
+            );
+
+            event.target.reset();
+        }
+    </script>
+
+</body>
+</html>
